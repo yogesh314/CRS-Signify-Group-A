@@ -8,5 +8,17 @@ package com.signify.service;
  *
  */
 public class GradeServiceOperation {
-
+	
+	public void calculateCpi() {
+		
+	}
+	
+	public void viewGrade() {
+		
+	}
+	
+	public void viewGradeCard() {
+		
+	}
+	 
 }

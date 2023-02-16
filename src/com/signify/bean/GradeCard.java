@@ -12,6 +12,10 @@ import java.util.List;
  */
 public class GradeCard {
 private int studentId;
+private int semester;
+private float cpi;
+private List<String> registeredCourses=new ArrayList<String>();
+
 public int getStudentId() {
 	return studentId;
 }
@@ -36,7 +40,5 @@ public List<String> getRegisteredCourses() {
 public void setRegisteredCourses(List<String> registeredCourses) {
 	this.registeredCourses = registeredCourses;
 }
-private int semester;
-private float cpi;
-private List<String> registeredCourses=new ArrayList<String>();
+
 }

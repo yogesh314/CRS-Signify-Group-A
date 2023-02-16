@@ -33,4 +33,12 @@ public class AdminServiceOperation {
 		return a;
 	}
 	
+	public void generateReportCard() {
+		
+	}
+	
+	public void assignProfToCourse() {
+		
+	}
+	
 }

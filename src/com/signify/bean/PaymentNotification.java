@@ -9,6 +9,10 @@ package com.signify.bean;
  */
 public class PaymentNotification {
 	private int studentId;
+	private int referenceId;
+	private int notificationId;
+	private String notificationMessage;
+	
 	public int getStudentId() {
 		return studentId;
 	}
@@ -33,7 +37,5 @@ public class PaymentNotification {
 	public void setNotificationMessage(String notificationMessage) {
 		this.notificationMessage = notificationMessage;
 	}
-	private int referenceId;
-	private int notificationId;
-	private String notificationMessage;
+	
 }

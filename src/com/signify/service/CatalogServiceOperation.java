@@ -9,4 +9,16 @@ package com.signify.service;
  */
 public class CatalogServiceOperation {
 
+	public void addCourse() {
+		
+	}
+	
+	public void removeCourse() {
+		
+	}
+	
+	public void viewCourse() {
+		
+	}
+	
 }

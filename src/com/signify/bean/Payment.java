@@ -9,6 +9,10 @@ package com.signify.bean;
  */
 public class Payment {
 	private int studentId;
+	private String referenceId;
+	private float amount;
+	private boolean status;
+	
 	public int getStudentId() {
 		return studentId;
 	}
@@ -33,7 +37,5 @@ public class Payment {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	private String referenceId;
-	private float amount;
-	private boolean status;
+	
 }
