@@ -4,6 +4,7 @@
 package com.signify.client;
 import java.util.Scanner;
 
+import com.signify.service.AdminInterface;
 import com.signify.service.AdminServiceOperation;
 /**
  * @author prati
@@ -26,7 +27,8 @@ public class CRSAdminMenu {
 		    System.out.println("String: " +scan1.nextLine());  
 	        scan1.close();
 	        String name = " ";
-    	AdminServiceOperation service = new AdminServiceOperation();
+    	//AdminServiceOperation service = new AdminServiceOperation();
+	        AdminInterface service = new AdminServiceOperation();
     	service.approveStudent(name);
     	service.assignCourse(name);
     	service.addProfessor(name);
