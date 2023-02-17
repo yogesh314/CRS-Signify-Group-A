@@ -2,6 +2,8 @@
  * 
  */
 package com.signify.client;
+import java.util.Scanner;
+
 import com.signify.service.AdminServiceOperation;
 /**
  * @author prati
@@ -14,14 +16,22 @@ public class CRSAdminMenu {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		AdminServiceOperation service = new AdminServiceOperation();
-		service.addAdmin(null);
-		service.addProfessor(null);
-		service.approveStudent(null);
-		service.assignCourse(null);
-		service.updateDetails(null);
-		service.updatePassword(null);
+	}
+	
+         public static void dis() {
+        	 
+         
+    	String p = "Welcome to Admin Menu"; 
+    	Scanner scan1 = new Scanner(p); 
+		    System.out.println("String: " +scan1.nextLine());  
+	        scan1.close();
+	        String name = " ";
+    	AdminServiceOperation service = new AdminServiceOperation();
+    	service.approveStudent(name);
+    	service.assignCourse(name);
+    	service.addProfessor(name);
+    	service.addAdmin(name);
+         }
 	}
 
-}
+
