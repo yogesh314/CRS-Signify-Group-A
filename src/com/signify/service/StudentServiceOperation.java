@@ -14,7 +14,7 @@ public class StudentServiceOperation implements StudentInterface {
 	}
 	
 	public void addCourse() {
-		System.out.println("hello");
+		System.out.println("hello\n\n");
 	}
 	
 	public void dropCourse() {
