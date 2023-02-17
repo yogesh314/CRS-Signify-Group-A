@@ -7,7 +7,7 @@ package com.signify.service;
  * @author prati
  *
  */
-public class GradeServiceOperation {
+public class GradeServiceOperation implements GradeInterface{
 	
 	public void calculateCpi() {
 		
