@@ -7,14 +7,14 @@ package com.signify.service;
  * @author prati
  *
  */
-public class StudentServiceOperation {
+public class StudentServiceOperation implements StudentInterface {
 	
 	public void registerCourse() {
 		
 	}
 	
 	public void addCourse() {
-		
+		System.out.println("hello");
 	}
 	
 	public void dropCourse() {

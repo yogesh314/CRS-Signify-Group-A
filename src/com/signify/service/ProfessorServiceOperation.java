@@ -7,7 +7,7 @@ package com.signify.service;
  * @author prati
  *
  */
-public class ProfessorServiceOperation {
+public class ProfessorServiceOperation implements ProfessorInterface {
 	
 	public String viewEnrolledStudents(String a) {
 		return a;

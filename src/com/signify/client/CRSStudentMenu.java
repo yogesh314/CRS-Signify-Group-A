@@ -5,6 +5,7 @@ package com.signify.client;
 
 import java.util.Scanner;
 
+import com.signify.service.StudentInterface;
 import com.signify.service.StudentServiceOperation;
 
 /**
@@ -24,7 +25,8 @@ public class CRSStudentMenu {
     	Scanner scan2 = new Scanner(t); 
 		System.out.println("String: " +scan2.nextLine());  
 	    scan2.close();
-		StudentServiceOperation service = new StudentServiceOperation();
+		//StudentServiceOperation service = new StudentServiceOperation();
+	    StudentInterface service = new StudentServiceOperation();
 		
 		service.addCourse();
 		service.dropCourse();

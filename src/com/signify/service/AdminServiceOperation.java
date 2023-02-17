@@ -7,7 +7,7 @@ package com.signify.service;
  * @author prati
  *
  */
-public class AdminServiceOperation {
+public class AdminServiceOperation implements AdminInterface{
 	
 	public String addProfessor(String a) {
 		return a;

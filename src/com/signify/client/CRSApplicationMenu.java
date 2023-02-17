@@ -47,7 +47,7 @@ public class CRSApplicationMenu {
 	        {
                CRSAdminMenu.dis();
 	        }
-	        if(d.equals("student"))
+	        if(d.equals("Student"))
 	        {
 	        	CRSStudentMenu.dis3();;
 	        }
