@@ -69,7 +69,7 @@ public class StudentServiceOperations implements StudentInterface {
 		newStudentObject.setUserId(userId);
 		newStudentObject.setName(studentName);
 		newStudentObject.setPassword(studentPassword);
-		newStudentObject.setRole(2);
+		newStudentObject.setRole(1);
 		newStudentObject.setStudentId(studentId);
 		newStudentObject.setRegistered(false);
 		newStudentObject.setBranch(studentBranch);

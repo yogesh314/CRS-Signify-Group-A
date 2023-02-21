@@ -3,6 +3,9 @@
  */
 package com.signify.service;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import com.signify.bean.Course;
@@ -12,12 +15,22 @@ import com.signify.collections.AdminCollection;
 import com.signify.collections.CourseCollection;
 import com.signify.collections.ProfessorCollection;
 import com.signify.collections.StudentCollection;
+import com.signify.dao.AdminDAOImplementation;
+import com.signify.dao.ProfessorDAOImplementation;
+import com.signify.dao.ProfessorDAOInterface;
 
 /**
  * @author hp
  *
  */
 public class AdminServiceOperations implements AdminInterface {
+	
+	   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+	   static final String DB_URL = "jdbc:mysql://localhost/crs";
+
+	   //  Database credentials
+	   static final String USER = "root";
+	   static final String PASS = "YogeshKingh123";
 	
 	public CourseCollection courseData = new CourseCollection();
 	
@@ -34,7 +47,7 @@ public class AdminServiceOperations implements AdminInterface {
 		return courseData; 
 	}
 	
-	public ProfessorCollection addProfessor() {
+public ProfessorCollection addProfessor() {
 		
 		Professor newProfessorObject = new Professor();
 		
@@ -71,6 +84,26 @@ public class AdminServiceOperations implements AdminInterface {
 		
 		 System.out.println("Professor has been added...... Success !!");
 		
+		professorData.professorObject.add(newProfessorObject);
+		
+
+		try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS))
+		{
+//			Class.forName("com.mysql.jdbc.Driver");
+
+			ProfessorDAOInterface professorDao = new ProfessorDAOImplementation(conn);
+			boolean registered = professorDao.addProfessorDAO(newProfessorObject);
+			
+			if (registered) {
+				System.out.println("\nSuccess !! You are registered.....Redirecting to Main Menu\n");
+            } else {
+                System.out.println("Failed to register professor");
+            }
+		}
+		
+		catch (SQLException ex) {
+            ex.printStackTrace();
+        }
 		professorData.professorObject.add(newProfessorObject);
 		
 		return professorData;
@@ -188,23 +221,11 @@ public class AdminServiceOperations implements AdminInterface {
 		
 	}
 	
-	public void viewCourseDetails(CourseCollection obj) {
+	public void viewCourseDetails() {
+		AdminDAOImplementation viewCourse= new AdminDAOImplementation();
 		System.out.println("\nCOURSES");
 		System.out.print("==========================================\n");
-		for(int i=0;i<obj.courseObject.size();i++)
-		{
-		
-			System.out.println("Course Code: "+obj.courseObject.get(i).getCourseCode());
-			System.out.println("Course Name: "+obj.courseObject.get(i).getName());
-			System.out.println("Is Offered: "+obj.courseObject.get(i).getOffered());
-			System.out.println("Instructor: "+obj.courseObject.get(i).getInstructor());
-			System.out.print("==========================================\n");
-			
-		}
-		
-		System.out.print("Course List Ends\n-----------------------------------------\n");
-		
-			
+		viewCourse.viewCourses();
 		}
 	
 	public void generateReportCard() {
