@@ -4,10 +4,10 @@
 package com.signify.service;
 
 /**
- * @author prati
+ * @author hp
  *
  */
-public class GradeServiceOperation implements GradeInterface{
+public class GradeServiceOperations implements GradeInterface{
 	
 	public void calculateCpi() {
 		

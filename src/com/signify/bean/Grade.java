@@ -4,17 +4,18 @@
 package com.signify.bean;
 
 /**
- * @author prati
+ * @author Dell
  *
  */
 public class Grade {
-private String grade;
+	private String grade;
 
-public String getGrade() {
-	return grade;
-}
+	public String getGrade() {
+		return grade;
+	}
 
-public void setGrade(String grade) {
-	this.grade = grade;
-}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
 }

@@ -4,7 +4,7 @@
 package com.signify.bean;
 
 /**
- * @author prati
+ * @author HP
  *
  */
 public class OnlinePayment {

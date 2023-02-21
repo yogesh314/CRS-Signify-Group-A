@@ -2,33 +2,37 @@
  * 
  */
 package com.signify.bean;
+import java.util.*;
 
 /**
- * @author prati
+ * @author hp
  *
  */
-public class Professor {
-private String department;
-private String designation;
-private int DOJ;
+public class Professor extends User {
 
-public String getDepartment() {
-	return department;
-}
-public void setDepartment(String department) {
-	this.department = department;
-}
-public String getDesignation() {
-	return designation;
-}
-public void setDesignation(String designation) {
-	this.designation = designation;
-}
-public int getDOJ() {
-	return DOJ;
-}
-public void setDOJ(int dOJ) {
-	DOJ = dOJ;
-}
+	private String department;
+	private String designation;
+	private String DOJ;
+	
 
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+	public String getDesignation() {
+		return designation;
+	}
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+	public String getDOJ() {
+		return DOJ;
+	}
+	public void setDOJ(String dOJ) {
+		DOJ = dOJ;
+	}
+		
+	
 }

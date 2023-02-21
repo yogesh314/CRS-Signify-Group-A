@@ -4,10 +4,11 @@
 package com.signify.bean;
 
 /**
- * @author prati
+ * @author hp
  *
  */
 public class Payment {
+
 	private int studentId;
 	private String referenceId;
 	private float amount;
@@ -37,5 +38,5 @@ public class Payment {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
+
 }

@@ -3,31 +3,35 @@
  */
 package com.signify.bean;
 
+import java.util.Date;
+
 /**
- * @author prati
+ * @author hp
  *
  */
 public class SemesterRegistration {
-private int studentId;
-private int semester;
-private int dateOfRegistration;
-public int getStudentId() {
-	return studentId;
-}
-public void setStudentId(int studentId) {
-	this.studentId = studentId;
-}
-public int getSemester() {
-	return semester;
-}
-public void setSemester(int semester) {
-	this.semester = semester;
-}
-public int getDateOfRegistration() {
-	return dateOfRegistration;
-}
-public void setDateOfRegistration(int dateOfRegistration) {
-	this.dateOfRegistration = dateOfRegistration;
-}
 
+	private int StudentId;
+	private int semester;
+	private Date dateOfregistration;
+	
+	public int getStudentId() {
+		return StudentId;
+	}
+	public void setStudentId(int studentId) {
+		StudentId = studentId;
+	}
+	public int getSemester() {
+		return semester;
+	}
+	public void setSemester(int semester) {
+		this.semester = semester;
+	}
+	public Date getDateOfregistration() {
+		return dateOfregistration;
+	}
+	public void setDateOfregistration(Date dateOfregistration) {
+		this.dateOfregistration = dateOfregistration;
+	}
+	
 }
