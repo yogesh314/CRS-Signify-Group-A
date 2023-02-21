@@ -2,19 +2,23 @@
  * 
  */
 package com.signify.bean;
+import java.util.*;
+
 
 /**
- * @author yogesh
+ * @author hp
  *
  */
-public class Admin{
-	private int doj;
+public class Admin extends User {
 
-	public int getDoj() {
-		return doj;
+	private Date DOJ;
+
+	public Date getDOJ() {
+		return DOJ;
 	}
 
-	public void setDoj(int doj) {
-		this.doj = doj;
+	public void setDOJ(Date dOJ) {
+		DOJ = dOJ;
 	}
+	
 }

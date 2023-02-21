@@ -1,9 +1,14 @@
+/**
+ * 
+ */
 package com.signify.service;
 
+/**
+ * @author hp
+ *
+ */
 public interface ProfessorInterface {
-	public String viewEnrolledStudents(String a);
-	public String addGrade(String a);
-	public String updateDetails(String a);
-	public String updatePassword(String a);
-
+	public void viewEnrollStudents() ;
+	public void addGrade() ;
+	public void calculateCpi() ;
 }

@@ -4,10 +4,11 @@
 package com.signify.bean;
 
 /**
- * @author prati
+ * @author hp
  *
  */
 public class PaymentNotification {
+	
 	private int studentId;
 	private int referenceId;
 	private int notificationId;
@@ -38,4 +39,6 @@ public class PaymentNotification {
 		this.notificationMessage = notificationMessage;
 	}
 	
+
+
 }

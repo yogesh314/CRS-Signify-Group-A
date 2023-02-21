@@ -2,43 +2,44 @@
  * 
  */
 package com.signify.bean;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
- * @author prati
+ * @author hp
  *
  */
 public class GradeCard {
-private int studentId;
-private int semester;
-private float cpi;
-private List<String> registeredCourses=new ArrayList<String>();
-
-public int getStudentId() {
-	return studentId;
-}
-public void setStudentId(int studentId) {
-	this.studentId = studentId;
-}
-public int getSemester() {
-	return semester;
-}
-public void setSemester(int semester) {
-	this.semester = semester;
-}
-public float getCpi() {
-	return cpi;
-}
-public void setCpi(float cpi) {
-	this.cpi = cpi;
-}
-public List<String> getRegisteredCourses() {
-	return registeredCourses;
-}
-public void setRegisteredCourses(List<String> registeredCourses) {
-	this.registeredCourses = registeredCourses;
-}
+	
+	private int studentId;
+	private int semester;
+	private float cpi;
+	ArrayList<String> registeredCourses = new ArrayList<>();
+	
+	
+	public int getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+	public int getSemester() {
+		return semester;
+	}
+	public void setSemester(int semester) {
+		this.semester = semester;
+	}
+	public float getCpi() {
+		return cpi;
+	}
+	public void setCpi(float cpi) {
+		this.cpi = cpi;
+	}
+	public ArrayList<String> getRegisteredCourses() {
+		return registeredCourses;
+	}
+	public void setRegisteredCourses(ArrayList<String> registeredCourses) {
+		this.registeredCourses = registeredCourses;
+	}
+	
 
 }

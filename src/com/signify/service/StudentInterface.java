@@ -1,17 +1,21 @@
+/**
+ * 
+ */
 package com.signify.service;
 
-public interface StudentInterface {
+import com.signify.collections.StudentCollection;
 
-	public void registerCourse();
-	public void addCourse();
-	public void dropCourse();
-	public void viewCourseDetails();
-	public void viewRegisteredCourse();
-	public void payFees();
-	public void viewGradeCard();
-	public void register();
-	public void updateDetails();
-	public void updatePassword();
-	public void sendNotification();
-	
-	}
+/**
+ * @author hp
+ *
+ */
+public interface StudentInterface {
+	public void changePassword();
+	public StudentCollection register() ;
+	public void viewGradeCard() ;
+    public void registerCourses() ;
+	public void addCourse() ;
+	public void dropCourse() ;
+	public void payFees() ;
+	public void viewRegisteredCourses() ;
+}

@@ -4,10 +4,10 @@
 package com.signify.service;
 
 /**
- * @author prati
+ * @author hp
  *
  */
-public class CatalogServiceOperation implements CatalogInterface {
+public class CatalogServiceOperations implements CatalogInterface {
 
 	public void addCourse() {
 		
