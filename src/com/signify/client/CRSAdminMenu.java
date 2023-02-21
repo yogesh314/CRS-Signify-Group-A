@@ -24,10 +24,10 @@ public class CRSAdminMenu {
 //	public static ProfessorServiceOperations ProfessorServiceObj = new ProfessorServiceOperations();
 	
 	
-	public void displayAdminMenu(AdminCollection object, int index, CourseCollection obj, ProfessorCollection profObj) {
+	public void displayAdminMenu() {
 		// TODO Auto-generated method stub
 		System.out.print("\n================================\n");
-		  System.out.println("Logged in as "+object.adminObject.get(index).getName());
+		  //System.out.println("Logged in as "+object.adminObject.get(index).getName());
 		  System.out.println("================================");	
 		
       System.out.println("\nWELCOME TO ADMIN MENU");
@@ -73,33 +73,33 @@ public class CRSAdminMenu {
 		
 		case 1: 
 //			System.out.println("Student Approved");
-			adminObject.approveStudent();
-		displayAdminMenu(object,index,obj,profObj);
+			//adminObject.approveStudent();
+		displayAdminMenu();
 	
 		break;
 		
 		case 2: 
 //			System.out.println("Course Added");
-			CourseCollection obj1 = AdminServiceObj.addCourse(profObj);
-			displayAdminMenu(object,index,obj1,profObj);
+			//CourseCollection obj1 = AdminServiceObj.addCourse(profObj);
+			displayAdminMenu();
 		break;
 		
 		case 3: 
 //			System.out.println("Course Removed");
-			obj1 = adminObject.deleteCourse(obj);
-			displayAdminMenu(object,index,obj1,profObj);
+			//obj1 = adminObject.deleteCourse(obj);
+			displayAdminMenu();
 		break;
 		
 		case 4:
 //			System.out.println("Courses -->");
-			adminObject.viewCourseDetails(obj);
-			displayAdminMenu(object,index,obj,profObj);
+			adminObject.viewCourseDetails();
+			displayAdminMenu();
 		break;
 		
 		case 5: 
 //			System.out.println("Professor Added");
-			profObj = adminObject.addProfessor();
-			displayAdminMenu(object,index,obj,profObj);
+			adminObject.addProfessor();
+			displayAdminMenu();
 		break;
 		
 		case 6:
@@ -115,7 +115,7 @@ public class CRSAdminMenu {
 		default: System.out.println("Wrong Choice Selected, press ENTER to redirect to Professor Menu.");
 		try{System.in.read();}
 		catch(Exception e) {}
-		displayAdminMenu(object,index,obj,profObj);
+		displayAdminMenu();
 		}
 		
 		

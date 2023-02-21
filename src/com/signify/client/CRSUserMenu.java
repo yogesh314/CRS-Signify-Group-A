@@ -37,8 +37,12 @@ public class CRSUserMenu {
 		UserInterface userObject = new UserServiceOperations();
 		User user  = userObject.login();
 		
-		if(user.getRole()==1) {
+		if(user.getRole()== 1) {
+			System.out.println(user.getRole());
 			ob1.displayStudentMenu(user);
+		}
+		if(user.getRole()==2) {
+			ob2.displayAdminMenu();
 		}
 //		
 //		Scanner scan = new Scanner(System.in);

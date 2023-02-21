@@ -16,7 +16,7 @@ public interface AdminInterface {
 	public void approveStudent();
 	public CourseCollection addCourse(ProfessorCollection obj);
 	public CourseCollection deleteCourse(CourseCollection obj);
-	public void  viewCourseDetails(CourseCollection obj);
+	public void  viewCourseDetails();
 	public CourseCollection getCourseData();
 	public void generateReportCard();
 }

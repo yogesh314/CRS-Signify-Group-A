@@ -55,7 +55,7 @@ import com.signify.bean.User;
 			            user.setUserId(rs.getInt(1));
 			            user.setPassword(rs.getString(2));
 			            user.setName(rs.getString(3));
-			            user.setRole(1);
+			            user.setRole(rs.getInt(4));
 			        }
 
 			    } catch (SQLException e) {

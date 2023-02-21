@@ -48,7 +48,6 @@ public class CRSApplicationMenu {
 		System.out.println("4. Exit\n");
 		
 		
-		
 //		Scanner scan = new Scanner(System.in);
 		int userChoice=0;
 		
