@@ -18,10 +18,10 @@ public interface AdminDAOInterface {
 //	public void viewProfessors();
 //	
 	public void addProfessor();
+	public void addCourse();
 	
 	
-	
-	public void DropCourses(String courseCode);
+	public void dropCourses(String courseCode);
 		
 	
 //	
@@ -31,7 +31,7 @@ public interface AdminDAOInterface {
 //	
 //	public void removeCourse(String courseCode);
 //	
-//	//public void viewCourseDetails(String coursecode);
+//	public void viewCourseDetails(String coursecode);
 //	
 //	public void calculateCpi(int studentid);
 //	

@@ -7,12 +7,13 @@ import com.signify.collections.CourseCollection;
 import com.signify.collections.ProfessorCollection;
 
 /**
- * @author hp
+ * @author pratik
  *
  */
 public interface AdminInterface {
-	public void addAd();
+	public void addAdmin();
 	public void assignCourse();
+	public void addCourse();
 	public void dropCourse(String courseCode);
 	public void approveStudent();
 	public void viewCourseDetails();

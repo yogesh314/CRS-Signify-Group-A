@@ -21,7 +21,7 @@ import com.signify.dao.ProfessorDAOImplementation;
 import com.signify.dao.ProfessorDAOInterface;
 
 /**
- * @author hp
+ * @author pratik
  *
  */
 public class AdminServiceOperations implements AdminInterface {
@@ -33,7 +33,7 @@ public class AdminServiceOperations implements AdminInterface {
 	   static final String USER = "root";
 	   static final String PASS = "root";
 	
-	public void addAd() {
+	public void addAdmin() {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Enter new Admin Name:  ");
 		String userName = scan.nextLine();
@@ -44,8 +44,8 @@ public class AdminServiceOperations implements AdminInterface {
 		System.out.print("Enter user ID:  ");
 		int userId = scan.nextInt();
 		
-		AdminDAOInterface obj = new AdminDAOImplementation();
-		obj.addAdmin(userName, password, userId);
+		AdminDAOInterface addAdminObj = new AdminDAOImplementation();
+		addAdminObj.addAdmin(userName, password, userId);
 
 	}
 	
@@ -54,138 +54,39 @@ public class AdminServiceOperations implements AdminInterface {
 		addProfObj.addProfessor();
 	}
 	
-	public void assignCourse() {
-		System.out.println("Course assigned");
+	public void addCourse() {
+		AdminDAOInterface addCourseObj = new AdminDAOImplementation();
+		addCourseObj.addCourse();
 	}
+	
 	
 	public void dropCourse(String courseCode) {
 		
-		AdminDAOImplementation DropCourse= new AdminDAOImplementation();
-		DropCourse.DropCourses(courseCode);
+		AdminDAOImplementation dropCourseObj= new AdminDAOImplementation();
+		dropCourseObj.dropCourses(courseCode);
 	}
 	
 	public void approveStudent() {
-		AdminDAOInterface adminobj = new AdminDAOImplementation();
-		adminobj.approveStudent();
+		AdminDAOInterface approveStudentObj = new AdminDAOImplementation();
+		approveStudentObj.approveStudent();
 	}
 	
 	public void viewCourseDetails() {
-		AdminDAOImplementation viewCourse= new AdminDAOImplementation();
-		viewCourse.viewCourses();
+		AdminDAOImplementation viewCourseObj= new AdminDAOImplementation();
+		viewCourseObj.viewCourses();
 	}
 	
 	public void viewAdmins() {
-		AdminDAOImplementation viewAdmin= new AdminDAOImplementation();
-		viewAdmin.viewAdmins();
+		AdminDAOImplementation viewAdminObj= new AdminDAOImplementation();
+		viewAdminObj.viewAdmins();
+	}
+	
+	public void assignCourse() {
+		System.out.println("Course assigned");
 	}
 	
 	public void generateReportCard() {
 		 System.out.println("Report Card is --->");
 	}
 	
-	
-	
-	
-	
-	
-//	public CourseCollection addCourse(ProfessorCollection obj) {
-//		
-//		Course newCourseObject = new Course();
-//		Scanner scan = new Scanner(System.in);
-//		System.out.print("Enter Course Code:  ");
-//		String courseCode = scan.nextLine();
-//		
-//		System.out.print("Enter Course Name:  ");
-//		Scanner scan1 = new Scanner(System.in);
-//		String  courseName = scan1.nextLine();
-//		
-//		System.out.println("Is Course Being Offered ? ");
-//		System.out.println("1. For Yes: Press 1 ");
-//		System.out.println("2. For No: Press 2");
-//		Scanner scan2 = new Scanner(System.in);
-//		int courseOffered = scan2.nextInt();
-//		
-//		boolean isOffered = false; 
-//		
-//		if(courseOffered == 1)
-//		{
-//			isOffered = true;
-//		}
-//		else
-//		{
-//			isOffered = false;
-//		}
-//		
-//		
-//		System.out.print("Enter Name of Instructor: ");
-//		Scanner scan3 = new Scanner(System.in);
-//		String instructorName = scan3.nextLine();
-//		
-//		boolean isProfessorThere = false;
-//		
-//		for(int i=0;i<obj.professorObject.size();i++)
-//		{
-//			if(obj.professorObject.get(i).getName().equals(instructorName))
-//			{
-//				isProfessorThere=true;
-//				break;
-//			}
-//			
-//		}
-//		
-//		if(isProfessorThere==false)
-//		{
-//			System.out.print("\nProfessor Not Found !.. Try Again\n");
-//			return courseData;
-//		}
-//		
-//		newCourseObject.setCourseCode(courseCode);
-//		newCourseObject.setName(courseName);
-//		newCourseObject.setOffered(isOffered);
-//		newCourseObject.setInstructor(instructorName);
-//		
-//		courseData.courseObject.add(newCourseObject);
-//			
-//		System.out.println("Course Added !");
-//		
-//		
-//		return courseData;
-//		}
-//	
-//	public CourseCollection deleteCourse(CourseCollection obj) {
-//		
-//		System.out.print("Enter Course ID to delete: ");
-//		Scanner scan4 = new Scanner(System.in);
-//		String courseToDelete = scan4.nextLine();
-//		
-//		boolean isDeleted = false;
-//		
-//		for(int i=0;i<obj.courseObject.size();i++)
-//		{
-//			System.out.println(obj.courseObject.get(i).getCourseCode());
-//			if(obj.courseObject.get(i).getCourseCode().equals(courseToDelete))
-//			{
-//				obj.courseObject.remove(i);
-//				System.out.println("Course Deleted !");
-//				isDeleted = true;
-//			}
-//		
-//		}
-//		
-//		if(isDeleted==false)
-//		{
-//			System.out.println("Course Not Found... Try Again");
-//		}
-//		
-//		return courseData;
-//		
-//	}1
-	
-	
-	
-	
-	
-	
-
-
 }

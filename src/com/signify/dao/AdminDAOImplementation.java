@@ -13,8 +13,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+import com.signify.bean.Course;
+
 /**
- * @author HP
+ * @author pratik
  *
  */
 public class AdminDAOImplementation implements AdminDAOInterface {
@@ -249,11 +251,6 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 					         String adminName = rs.getString("userName");
 					         
 					         System.out.printf("| %-10s | %-10s |%n", adminId ,adminName);
-
-//					         System.out.print("CourseCode: " + coursecode);
-//					         System.out.print(", CourseName: " + coursename);
-//					         System.out.print(", Offered: " + isOffered);
-//					         System.out.println(", Instructor: " + instructor);
 					      }
 					      System.out.printf("--------------------------------%n");
 					      stmt.close();
@@ -281,13 +278,13 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 		   }
 		   
 		   public void addProfessor() {
-			   Connection conn = null;
-			   PreparedStatement stmt_user = null;
-			   PreparedStatement stmt_professor = null;
+			    Connection conn = null;
+			    PreparedStatement stmt_user = null;
+			    PreparedStatement stmt_professor = null;
 			   
-			   Scanner scan = new Scanner(System.in);
-			   System.out.print("Enter Name of Professor:  ");
-			   String professorName = scan.nextLine();
+			    Scanner scan = new Scanner(System.in);
+			    System.out.print("Enter Name of Professor:  ");
+			    String professorName = scan.nextLine();
 				
 				Scanner scan1 = new Scanner(System.in);
 				System.out.print("Enter Professor ID:  ");
@@ -305,9 +302,6 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 				Scanner scan4 = new Scanner(System.in);
 				String department = scan4.nextLine();
 				
-//				System.out.print("Enter DOJ: ");
-//				Scanner scan5 = new Scanner(System.in);
-//				String professorDoj = scan5.nextLine();
 			   
 			   try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
@@ -362,7 +356,77 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 			   
 		   }
 		   
-		   public void DropCourses(String courseCode)
+		   public void addCourse() {
+			    Connection conn = null;
+				PreparedStatement stmt = null;
+				
+				Scanner scan = new Scanner(System.in);
+				System.out.print("Enter Course Code:  ");
+				String courseCode = scan.nextLine();
+				
+				System.out.print("Enter Course Name:  ");
+				Scanner scan1 = new Scanner(System.in);
+				String  courseName = scan1.nextLine();
+				
+				System.out.println("Is Course Being Offered ? ");
+				System.out.println("1. For Yes: Press 1 ");
+				System.out.println("2. For No: Press 0");
+				Scanner scan2 = new Scanner(System.in);
+				int courseOffered = scan2.nextInt();
+				
+				String isOffered = ""; 
+				
+				if(courseOffered == 1)
+				{
+					isOffered = "Yes";
+				}
+				else
+				{
+					isOffered = "No";
+				}
+				
+				System.out.print("Enter Name of Instructor: ");
+				Scanner scan3 = new Scanner(System.in);
+				String instructorName = scan3.nextLine();
+				
+				try {
+					
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					conn = DriverManager.getConnection(DB_URL, USER, PASS);
+					
+					String sql = "insert into courses (courseCode, courseName ,isOffered , instructor) values(?,?,?,?)";
+					
+					stmt = conn.prepareStatement(sql);
+					stmt.setString(1, courseCode);
+					stmt.setString(2, courseName);
+					stmt.setString(3, isOffered);
+					stmt.setString(4, instructorName);
+					
+					stmt.executeUpdate();
+					stmt.close();
+					System.out.println("Course has been added successfully!! ");
+					conn.close();
+			   }
+				catch (SQLException se) {
+					se.printStackTrace();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					try {
+						if (stmt != null)
+							stmt.close();
+					} catch (SQLException se2) {
+					}
+					try {
+						if (conn != null)
+							conn.close();
+					} catch (SQLException se) {
+						se.printStackTrace();
+					}
+				}
+		   }
+		   
+		   public void dropCourses(String courseCode)
 		   {
 			   Connection conn = null;
 			   PreparedStatement stmt = null;

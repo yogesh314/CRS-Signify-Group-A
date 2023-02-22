@@ -9,7 +9,7 @@ import com.signify.service.ProfessorInterface;
 import com.signify.service.ProfessorServiceOperations;
 
 /**
- * @author hp
+ * @author pratik
  *
  */
 public class CRSProfessorMenu {

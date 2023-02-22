@@ -15,7 +15,7 @@ import com.signify.service.ProfessorServiceOperations;
 import com.signify.service.StudentServiceOperations;
 
 /**
- * @author hp
+ * @author pratik
  *
  */
 public class CRSAdminMenu {
@@ -83,7 +83,7 @@ public class CRSAdminMenu {
 		
 		case 2: 
 //			System.out.println("Add Admin");
-			adminObject.addAd();
+			adminObject.addAdmin();
 			displayAdminMenu();
 		break;
 		
@@ -95,7 +95,7 @@ public class CRSAdminMenu {
 		
 		case 4:
 //			System.out.println("Add Course");
-			adminObject.viewCourseDetails();
+			adminObject.addCourse();
 			displayAdminMenu();
 		break;
 		
@@ -120,17 +120,17 @@ public class CRSAdminMenu {
 		
 		case 8:
 //			System.out.println("Assign Professor to Course");
-			adminObject.generateReportCard();
+			//adminObject.generateReportCard();
 		break;
 		
 		case 9:
 //			System.out.println("CalculateCPI");
-			adminObject.generateReportCard();
+			//adminObject.generateReportCard();
 		break;
 		
 		case 10:
 //			System.out.println("Generate Report Card");
-			adminObject.generateReportCard();
+			// adminObject.generateReportCard();
 		break;
 		
 		case 11: System.out.println("\nRedirecting to Main Menu ");
@@ -142,9 +142,9 @@ public class CRSAdminMenu {
 		try{System.in.read();}
 		catch(Exception e) {}
 		displayAdminMenu();
+		
 		}
 		 
-		
 		
 //		scan.close();
 	}
