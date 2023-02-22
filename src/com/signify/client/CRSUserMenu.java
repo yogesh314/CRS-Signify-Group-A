@@ -33,15 +33,21 @@ public class CRSUserMenu {
 		CRSStudentMenu ob1=new CRSStudentMenu();
 		CRSAdminMenu ob2=new CRSAdminMenu();
 		CRSProfessorMenu ob3=new CRSProfessorMenu();
+		CRSApplicationMenu ob4 = new CRSApplicationMenu();
 //		
 		UserInterface userObject = new UserServiceOperations();
 		User user  = userObject.login();
 		
-		if(user.getRole()== 1) {
+		if(user.getIsApproved()==0 && user.getRole()==1) {
+			System.out.println("You Are Not Approved Please Contact Admin");
+			ob4.main(null);
+		}
+		
+		else if(user.getRole()== 1) {
 			System.out.println(user.getRole());
 			ob1.displayStudentMenu(user);
 		}
-		if(user.getRole()==2) {
+		else if(user.getRole()==2) {
 			ob2.displayAdminMenu();
 		}
 //		

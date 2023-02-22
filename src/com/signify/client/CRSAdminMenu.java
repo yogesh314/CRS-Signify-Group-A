@@ -33,14 +33,17 @@ public class CRSAdminMenu {
       System.out.println("\nWELCOME TO ADMIN MENU");
       System.out.println("===========================\n");
       System.out.println("ADMIN MENU");
-		System.out.println("1. Approve the student registration");
-		System.out.println("2. Add Course");
-		System.out.println("3. Remove Course");
-		System.out.println("4. View Course");
-		System.out.println("5. Add Professor");
-		System.out.println("6. Generate Report Card");
-//		System.out.println("5. Assign Professor to course");
-		System.out.println("7. Exit\n");
+		System.out.println("1. Approve Student");
+		System.out.println("2. AddAdmin");
+		System.out.println("3. viewAdmins");
+		System.out.println("4. Add Course");
+		System.out.println("5. Remove Course");
+		System.out.println("6. View Courses");
+		System.out.println("7. Add Professor");
+		System.out.println("8. Assign Professor to course");
+		System.out.println("9. CalculateCPI");
+		System.out.println("10.Generate Report Card");
+		System.out.println("11.Exit\n");
 		
 //		System.out.println("Enter your Choice: ");
 		
@@ -73,41 +76,61 @@ public class CRSAdminMenu {
 		
 		case 1: 
 //			System.out.println("Student Approved");
-			//adminObject.approveStudent();
-		displayAdminMenu();
+			adminObject.approveStudent();
+		    displayAdminMenu();
 	
 		break;
 		
 		case 2: 
-//			System.out.println("Course Added");
-			//CourseCollection obj1 = AdminServiceObj.addCourse(profObj);
+//			System.out.println("Add Admin");
+			adminObject.addAd();
 			displayAdminMenu();
 		break;
 		
 		case 3: 
-//			System.out.println("Course Removed");
+//			System.out.println("View Admins");
 			//obj1 = adminObject.deleteCourse(obj);
 			displayAdminMenu();
 		break;
 		
 		case 4:
-//			System.out.println("Courses -->");
+//			System.out.println("Add Course");
 			adminObject.viewCourseDetails();
 			displayAdminMenu();
 		break;
 		
 		case 5: 
-//			System.out.println("Professor Added");
-			adminObject.addProfessor();
+//			System.out.println("Remove Course");
+			//adminObject.addProfessor();
 			displayAdminMenu();
 		break;
 		
 		case 6:
-//			System.out.println("Report Card --> ");
+//			System.out.println("View Course");
 			adminObject.generateReportCard();
 		break;
 		
-		case 7: System.out.println("\nRedirecting to Main Menu ");
+		case 7:
+//			System.out.println("Add Professor");
+			adminObject.generateReportCard();
+		break;
+		
+		case 8:
+//			System.out.println("Assign Professor to Course");
+			adminObject.generateReportCard();
+		break;
+		
+		case 9:
+//			System.out.println("CalculateCPI");
+			adminObject.generateReportCard();
+		break;
+		
+		case 10:
+//			System.out.println("Generate Report Card");
+			adminObject.generateReportCard();
+		break;
+		
+		case 11: System.out.println("\nRedirecting to Main Menu ");
 		CRSApplicationMenu exitobj= new CRSApplicationMenu();
 		exitobj.main(null);
 		break;
@@ -117,7 +140,7 @@ public class CRSAdminMenu {
 		catch(Exception e) {}
 		displayAdminMenu();
 		}
-		
+		 
 		
 		
 //		scan.close();

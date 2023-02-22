@@ -26,7 +26,7 @@ public class CRSStudentMenu {
       System.out.println("\nWELCOME TO STUDENT MENU");
       System.out.println("===========================\n");
       System.out.println("STUDENT MENU");
-		System.out.println("1. Register for Course");
+		System.out.println("1. Register for Semester");
 		System.out.println("2. Add Course");
 		System.out.println("3. Drop Course");
 		System.out.println("4. View Grades");
