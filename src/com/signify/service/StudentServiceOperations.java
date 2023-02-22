@@ -74,6 +74,7 @@ public class StudentServiceOperations implements StudentInterface {
 		newStudentObject.setRegistered(false);
 		newStudentObject.setBranch(studentBranch);
 		newStudentObject.setBatch(studentBatch);
+		newStudentObject.setIsApproved(0);
 		
 		
 		try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS))

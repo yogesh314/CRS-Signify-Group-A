@@ -25,6 +25,7 @@ import com.signify.bean.User;
 		   static final String USER = "root";
 		   static final String PASS = "YogeshKingh123";
 		
+		@SuppressWarnings("resource")
 		public User loginDAO(int userId, String password)
 		{
 			   Connection conn = null;
@@ -56,7 +57,9 @@ import com.signify.bean.User;
 			            user.setPassword(rs.getString(2));
 			            user.setName(rs.getString(3));
 			            user.setRole(rs.getInt(4));
+			            user.setIsApproved(rs.getInt(5));
 			        }
+			        	 
 
 			    } catch (SQLException e) {
 			        e.printStackTrace();

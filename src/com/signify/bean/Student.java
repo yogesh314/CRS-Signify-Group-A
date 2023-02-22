@@ -14,6 +14,7 @@ public class Student extends User {
 	private int batch;
 	private boolean isRegistered;
 
+
 	public boolean isRegisteresd() {
 		return isRegistered;
 	}
