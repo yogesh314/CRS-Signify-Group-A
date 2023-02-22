@@ -11,12 +11,9 @@ import com.signify.collections.ProfessorCollection;
  *
  */
 public interface AdminInterface {
-	public ProfessorCollection addProfessor() ;
+	public void addAd();
 	public void assignCourse();
 	public void approveStudent();
-	public CourseCollection addCourse(ProfessorCollection obj);
-	public CourseCollection deleteCourse(CourseCollection obj);
-	public void  viewCourseDetails();
-	public CourseCollection getCourseData();
+	public void viewCourseDetails();
 	public void generateReportCard();
 }

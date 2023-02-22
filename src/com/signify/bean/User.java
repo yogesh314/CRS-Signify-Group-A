@@ -13,6 +13,16 @@ public class User {
 	private int role;
 	private String name;
 	private String password;
+	private int isApproved;
+
+
+	public int getIsApproved() {
+		return isApproved;
+	}
+
+	public void setIsApproved(int isApproved) {
+		this.isApproved = isApproved;
+	}
 	
 	
 	public String getPassword() {
