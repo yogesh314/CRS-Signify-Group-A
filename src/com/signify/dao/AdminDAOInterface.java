@@ -13,11 +13,17 @@ public interface AdminDAOInterface {
 	public void addAdmin(String username, String password, int userId);
 //	public void addAdmin();
 //	
-//	public void viewAdmins();
+	public void viewAdmins();
 //	
 //	public void viewProfessors();
 //	
-//	public void addProfessor();
+	public void addProfessor();
+	
+	
+	
+	public void DropCourses(String courseCode);
+		
+	
 //	
 //	public void assignProfessorToCourse(int professor_id, String courseCode);
 //	

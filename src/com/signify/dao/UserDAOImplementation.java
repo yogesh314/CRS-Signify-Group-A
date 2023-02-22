@@ -23,7 +23,7 @@ import com.signify.bean.User;
 
 		   //  Database credentials
 		   static final String USER = "root";
-		   static final String PASS = "YogeshKingh123";
+		   static final String PASS = "root";
 		
 		@SuppressWarnings("resource")
 		public User loginDAO(int userId, String password)

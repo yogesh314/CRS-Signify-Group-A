@@ -31,7 +31,7 @@ public class AdminServiceOperations implements AdminInterface {
 
 	   //  Database credentials
 	   static final String USER = "root";
-	   static final String PASS = "YogeshKingh123";
+	   static final String PASS = "root";
 	
 	public void addAd() {
 		Scanner scan = new Scanner(System.in);
@@ -49,81 +49,44 @@ public class AdminServiceOperations implements AdminInterface {
 
 	}
 	
-//	public ProfessorCollection addProfessor() {
-//		
-//		Professor newProfessorObject = new Professor();
-//		
-//		Scanner scan = new Scanner(System.in);
-//		System.out.print("Enter Name of Professor:  ");
-//		String professorName = scan.nextLine();
-//		
-//		Scanner scan1 = new Scanner(System.in);
-//		System.out.print("Enter user ID:  ");
-//		int userId = scan1.nextInt();
-//		
-//		System.out.print("Enter Password: ");
-//		Scanner scan2 = new Scanner(System.in);
-//		String userPassword = scan2.nextLine();
-//		
-//		System.out.print("Enter Designation: ");
-//		Scanner scan3 = new Scanner(System.in);
-//		String professorDesignation = scan3.nextLine();
-//		
-//		System.out.print("Enter Department: ");
-//		Scanner scan4 = new Scanner(System.in);
-//		String professorDepartment = scan4.nextLine();
-//		
-//		System.out.print("Enter DOJ: ");
-//		Scanner scan5 = new Scanner(System.in);
-//		String professorDoj = scan5.nextLine();
-//		
-//		newProfessorObject.setName(professorName);
-//		newProfessorObject.setUserId(userId);
-//		newProfessorObject.setPassword(userPassword);
-//		newProfessorObject.setDesignation(professorDesignation);
-//		newProfessorObject.setDepartment(professorDepartment);
-//		newProfessorObject.setDOJ(professorDoj);
-//		
-//		 System.out.println("Professor has been added...... Success !!");
-//		
-//		professorData.professorObject.add(newProfessorObject);
-//		
-//
-//		try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS))
-//		{
-////			Class.forName("com.mysql.jdbc.Driver");
-//
-//			ProfessorDAOInterface professorDao = new ProfessorDAOImplementation(conn);
-//			boolean registered = professorDao.addProfessorDAO(newProfessorObject);
-//			
-//			if (registered) {
-//				System.out.println("\nSuccess !! You are registered.....Redirecting to Main Menu\n");
-//            } else {
-//                System.out.println("Failed to register professor");
-//            }
-//		}
-//		
-//		catch (SQLException ex) {
-//            ex.printStackTrace();
-//        }
-//		professorData.professorObject.add(newProfessorObject);
-//		
-//		return professorData;
-//	 
-//	}
+	public void addProfessor() {
+		AdminDAOInterface addProfObj = new AdminDAOImplementation();
+		addProfObj.addProfessor();
+	}
 	
 	public void assignCourse() {
+		System.out.println("Course assigned");
+	}
+	
+	public void dropCourse(String courseCode) {
 		
-		 System.out.println("Course assigned");
-		 
+		AdminDAOImplementation DropCourse= new AdminDAOImplementation();
+		DropCourse.DropCourses(courseCode);
 	}
 	
 	public void approveStudent() {
-	 
-	 AdminDAOInterface adminobj = new AdminDAOImplementation();
-	 adminobj.approveStudent();
-		 
+		AdminDAOInterface adminobj = new AdminDAOImplementation();
+		adminobj.approveStudent();
 	}
+	
+	public void viewCourseDetails() {
+		AdminDAOImplementation viewCourse= new AdminDAOImplementation();
+		viewCourse.viewCourses();
+	}
+	
+	public void viewAdmins() {
+		AdminDAOImplementation viewAdmin= new AdminDAOImplementation();
+		viewAdmin.viewAdmins();
+	}
+	
+	public void generateReportCard() {
+		 System.out.println("Report Card is --->");
+	}
+	
+	
+	
+	
+	
 	
 //	public CourseCollection addCourse(ProfessorCollection obj) {
 //		
@@ -216,20 +179,13 @@ public class AdminServiceOperations implements AdminInterface {
 //		
 //		return courseData;
 //		
-//	}
+//	}1
 	
-	public void viewCourseDetails() {
-		AdminDAOImplementation viewCourse= new AdminDAOImplementation();
-		System.out.println("\nCOURSES");
-		System.out.print("==========================================\n");
-		viewCourse.viewCourses();
-		}
 	
-	public void generateReportCard() {
-		
-		 System.out.println("Report Card is --->");
-		 
-	}
+	
+	
+	
+	
 
 
 }

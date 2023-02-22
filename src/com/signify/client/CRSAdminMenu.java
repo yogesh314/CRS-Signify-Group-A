@@ -37,7 +37,7 @@ public class CRSAdminMenu {
 		System.out.println("2. AddAdmin");
 		System.out.println("3. viewAdmins");
 		System.out.println("4. Add Course");
-		System.out.println("5. Remove Course");
+		System.out.println("5. Drop Course");
 		System.out.println("6. View Courses");
 		System.out.println("7. Add Professor");
 		System.out.println("8. Assign Professor to course");
@@ -89,7 +89,7 @@ public class CRSAdminMenu {
 		
 		case 3: 
 //			System.out.println("View Admins");
-			//obj1 = adminObject.deleteCourse(obj);
+			adminObject.viewAdmins();
 			displayAdminMenu();
 		break;
 		
@@ -100,19 +100,22 @@ public class CRSAdminMenu {
 		break;
 		
 		case 5: 
-//			System.out.println("Remove Course");
-			//adminObject.addProfessor();
+//			System.out.println("Drop Course");
+			System.out.println("Enter Course code");
+			Scanner in = new Scanner(System.in);
+			String courseCode = in.nextLine();
+			adminObject.dropCourse(courseCode);
 			displayAdminMenu();
 		break;
 		
 		case 6:
 //			System.out.println("View Course");
-			adminObject.generateReportCard();
+			adminObject.viewCourseDetails();
 		break;
 		
 		case 7:
 //			System.out.println("Add Professor");
-			adminObject.generateReportCard();
+			adminObject.addProfessor();
 		break;
 		
 		case 8:

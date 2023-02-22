@@ -24,7 +24,7 @@ public class StudentServiceOperations implements StudentInterface {
 
 	   //  Database credentials
 	   static final String USER = "root";
-	   static final String PASS = "YogeshKingh123";
+	   static final String PASS = "root";
 
 	
 	public StudentCollection studentData = new StudentCollection();
@@ -81,7 +81,7 @@ public class StudentServiceOperations implements StudentInterface {
 		{
 //			Class.forName("com.mysql.jdbc.Driver");
 
-			StudentDAOInterface userDao = new StudentDAOImplementation(conn);
+			StudentDAOInterface userDao = new StudentDAOImplementation();
 			boolean registered = userDao.registerDAO(newStudentObject);
 			
 			if (registered) {

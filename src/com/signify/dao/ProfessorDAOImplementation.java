@@ -7,6 +7,7 @@
 
 	import com.signify.bean.Professor;
     import com.signify.service.ProfessorInterface;
+import com.signify.utils.DBUtils;
 
 	/**
 	 * @author prati
@@ -15,14 +16,14 @@
 	public class ProfessorDAOImplementation implements ProfessorDAOInterface{
 		
 		 private Connection conn;
-			public ProfessorDAOImplementation(Connection conn) {
-		        this.conn = conn;
-		    }
-			
+//			public ProfessorDAOImplementation(Connection conn) {
+//		        this.conn = conn;
+//		    }
+//			
 			@Override
 			public boolean addProfessorDAO(Professor professor) throws SQLException 
 			{
-			       
+					conn = DBUtils.getConnection();
 					String sql = "INSERT IGNORE INTO user (userID, password, userName, roleId) VALUES (?, ?,?, ?)";
 			        PreparedStatement stmt = conn.prepareStatement(sql);
 			        

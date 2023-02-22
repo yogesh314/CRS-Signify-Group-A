@@ -13,7 +13,10 @@ import com.signify.collections.ProfessorCollection;
 public interface AdminInterface {
 	public void addAd();
 	public void assignCourse();
+	public void dropCourse(String courseCode);
 	public void approveStudent();
 	public void viewCourseDetails();
+	public void viewAdmins();
+	public void addProfessor();
 	public void generateReportCard();
 }
