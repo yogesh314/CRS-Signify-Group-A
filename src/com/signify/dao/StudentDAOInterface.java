@@ -14,6 +14,8 @@ import com.signify.bean.Student;
 public interface StudentDAOInterface {
 	
 	public boolean registerDAO(Student student) throws SQLException ;
+	public void payfees() throws SQLException ;
+	public int addfees();
 	
 	//public boolean loginDAO(Student student) throws SQLException;
 

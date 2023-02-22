@@ -44,6 +44,9 @@ public class CRSUserMenu {
 		if(user.getRole()==2) {
 			ob2.displayAdminMenu();
 		}
+		if(user.getRole()==3) {
+			ob3.displayProfessorMenu();
+		}
 //		
 //		Scanner scan = new Scanner(System.in);
 //		System.out.print("Enter Id:  ");

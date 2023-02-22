@@ -103,7 +103,7 @@ public class CRSStudentMenu {
 		displayStudentMenu(object);
 		break;
 		
-		case 7: System.out.println("\nRedirecting to Main Menu ");
+		case 7: System.out.println("\nRedirecting to Main Menu\n ");
 			CRSApplicationMenu exitobj= new CRSApplicationMenu();
 		exitobj.main(null);
 		break;

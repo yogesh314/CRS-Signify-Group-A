@@ -228,6 +228,13 @@ public ProfessorCollection addProfessor() {
 		viewCourse.viewCourses();
 		}
 	
+	public void dropCourse(String courseCode) {
+		
+		AdminDAOImplementation DropCourse= new AdminDAOImplementation();
+		
+		DropCourse.DropCourses(courseCode);
+		System.out.println("Course Successfully Deleted!!");
+		}
 	public void generateReportCard() {
 		
 		 System.out.println("Report Card is --->");

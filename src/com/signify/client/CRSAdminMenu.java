@@ -87,11 +87,16 @@ public class CRSAdminMenu {
 		case 3: 
 //			System.out.println("Course Removed");
 			//obj1 = adminObject.deleteCourse(obj);
+			System.out.println("Enter Course code");
+			Scanner in = new Scanner(System.in);
+			String code = in.nextLine();
+			adminObject.dropCourse(code);
 			displayAdminMenu();
 		break;
 		
 		case 4:
 //			System.out.println("Courses -->");
+			
 			adminObject.viewCourseDetails();
 			displayAdminMenu();
 		break;

@@ -18,12 +18,12 @@ import com.signify.bean.User;
  */
 	public class UserDAOImplementation implements UserDAOInterface {
 		
-		   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+		   static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";  
 		   static final String DB_URL = "jdbc:mysql://localhost/crs";
 
 		   //  Database credentials
 		   static final String USER = "root";
-		   static final String PASS = "YogeshKingh123";
+		   static final String PASS = "root";
 		
 		public User loginDAO(int userId, String password)
 		{

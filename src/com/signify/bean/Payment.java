@@ -13,6 +13,7 @@ public class Payment {
 	private String referenceId;
 	private float amount;
 	private boolean status;
+
 	
 	public int getStudentId() {
 		return studentId;
@@ -38,5 +39,5 @@ public class Payment {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-
+	
 }

@@ -82,7 +82,10 @@ public class CRSApplicationMenu {
 		
 		switch(userChoice) {
 		
-		case 1: System.out.println("\nLogin Here");
+		case 1: System.out.println("\nLogin As: ");
+		System.out.println("1.STUDENT ");
+		System.out.println("2.ADMIN ");
+		System.out.println("3.PROFESSOR");
 		System.out.println("============================");
 		CRSUserMenu obj = new CRSUserMenu();
 //		StudentCollection object1 = StudentServiceObj;

@@ -15,11 +15,23 @@ public class UserServiceOperations implements UserInterface{
 	
 	public User login() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("Enter Id:  ");
+		System.out.print("Enter Your Choice:  ");
+		int choice=scan.nextInt();
+		if (choice== 1) {
+			System.out.println("Loging As Student...........");	
+		}
+		else if(choice==2){
+			System.out.println("Loging As Admin...........");
+		}
+		else {
+			System.out.println("Loging As Professor...........");
+		}
+		
+		System.out.print("Enter Your User Id:  ");
 		int userId = scan.nextInt();
 		
 		
-		System.out.print("Enter Password:  ");
+		System.out.print("Enter Your Password:  ");
 		Scanner scan2 = new Scanner(System.in);
 		String userPassword = scan2.nextLine();
 		
