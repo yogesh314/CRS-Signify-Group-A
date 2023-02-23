@@ -37,6 +37,7 @@ public class CRSUserMenu {
 //		
 		UserInterface userObject = new UserServiceOperations();
 		User user  = userObject.login();
+		int professorid = user.getUserId();
 		
 		if(user.getIsApproved()==0 && user.getRole()==1) {
 			System.out.println("You Are Not Approved Please Contact Admin");
@@ -49,6 +50,10 @@ public class CRSUserMenu {
 		}
 		else if(user.getRole()==2) {
 			ob2.displayAdminMenu();
+		}
+		else if(user.getRole()==3)
+		{
+			ob3.displayProfessorMenu(professorid);
 		}
 //		
 //		Scanner scan = new Scanner(System.in);

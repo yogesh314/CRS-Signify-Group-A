@@ -15,6 +15,5 @@ public interface StudentDAOInterface {
 	
 	public boolean registerDAO(Student student) throws SQLException ;
 	
-	//public boolean loginDAO(Student student) throws SQLException;
 
 }

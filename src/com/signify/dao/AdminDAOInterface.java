@@ -11,29 +11,13 @@ public interface AdminDAOInterface {
 	public void viewCourses();
 	
 	public void addAdmin(String username, String password, int userId);
-//	public void addAdmin();
-//	
+	
 	public void viewAdmins();
-//	
-//	public void viewProfessors();
-//	
+
 	public void addProfessor();
 	public void addCourse();
 	
 	
 	public void dropCourses(String courseCode);
-		
-	
-//	
-//	public void assignProfessorToCourse(int professor_id, String courseCode);
-//	
-//	public void addCourse();
-//	
-//	public void removeCourse(String courseCode);
-//	
-//	public void viewCourseDetails(String coursecode);
-//	
-//	public void calculateCpi(int studentid);
-//	
-//	public void generateReportCard(int studentId);
+	public void assignProfessorToCourse(int professorId, String courseCode);
 }

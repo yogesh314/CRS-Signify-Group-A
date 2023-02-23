@@ -21,13 +21,10 @@ import com.signify.service.StudentServiceOperations;
 public class CRSAdminMenu {
 	
 	public static AdminServiceOperations AdminServiceObj = new AdminServiceOperations();
-//	public static ProfessorServiceOperations ProfessorServiceObj = new ProfessorServiceOperations();
 	
 	
 	public void displayAdminMenu() {
-		// TODO Auto-generated method stub
 		System.out.print("\n================================\n");
-		  //System.out.println("Logged in as "+object.adminObject.get(index).getName());
 		  System.out.println("================================");	
 		
       System.out.println("\nWELCOME TO ADMIN MENU");
@@ -45,9 +42,6 @@ public class CRSAdminMenu {
 		System.out.println("10.Generate Report Card");
 		System.out.println("11.Exit\n");
 		
-//		System.out.println("Enter your Choice: ");
-		
-//		Scanner scan = new Scanner(System.in);
 		AdminInterface adminObject = new AdminServiceOperations();
 		
 		int adminChoice = 0;
@@ -59,7 +53,6 @@ public class CRSAdminMenu {
 			try {
 				System.out.print("Enter your Choice: ");
 				Scanner scan = new Scanner(System.in);
-//				System.out.println("Enter Integer Value only");
 				adminChoice = scan.nextInt();
 				flag=false;
 			}
@@ -75,32 +68,27 @@ public class CRSAdminMenu {
 		switch(adminChoice) {
 		
 		case 1: 
-//			System.out.println("Student Approved");
 			adminObject.approveStudent();
 		    displayAdminMenu();
 	
 		break;
 		
 		case 2: 
-//			System.out.println("Add Admin");
 			adminObject.addAdmin();
 			displayAdminMenu();
 		break;
 		
 		case 3: 
-//			System.out.println("View Admins");
 			adminObject.viewAdmins();
 			displayAdminMenu();
 		break;
 		
 		case 4:
-//			System.out.println("Add Course");
 			adminObject.addCourse();
 			displayAdminMenu();
 		break;
 		
 		case 5: 
-//			System.out.println("Drop Course");
 			System.out.println("Enter Course code");
 			Scanner in = new Scanner(System.in);
 			String courseCode = in.nextLine();
@@ -109,13 +97,13 @@ public class CRSAdminMenu {
 		break;
 		
 		case 6:
-//			System.out.println("View Course");
 			adminObject.viewCourseDetails();
+			displayAdminMenu();
 		break;
 		
 		case 7:
-//			System.out.println("Add Professor");
 			adminObject.addProfessor();
+			displayAdminMenu();
 		break;
 		
 		case 8:
@@ -144,9 +132,6 @@ public class CRSAdminMenu {
 		displayAdminMenu();
 		
 		}
-		 
-		
-//		scan.close();
 	}
 
 	

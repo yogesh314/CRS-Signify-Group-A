@@ -7,13 +7,14 @@ import java.util.Scanner;
 import com.signify.client.CRSApplicationMenu;
 import com.signify.service.ProfessorInterface;
 import com.signify.service.ProfessorServiceOperations;
+import com.signify.service.UserServiceOperations;
 
 /**
  * @author pratik
  *
  */
 public class CRSProfessorMenu {
-	public void displayProfessorMenu() {
+	public void displayProfessorMenu(int professorId) {
 		// TODO Auto-generated method stub
       System.out.println("\nWELCOME TO PROFESSOR MENU");
       System.out.println("===========================\n");
@@ -54,15 +55,16 @@ public class CRSProfessorMenu {
 		
 		case 1: 
 //			System.out.println("\nEnrolled Students:-->");
-			professorObject.viewEnrollStudents();
-		displayProfessorMenu() ;
+			
+			professorObject.viewEnrollStudents(professorId);
+		displayProfessorMenu(professorId) ;
 	
 		break;
 		
 		case 2: 
 //			System.out.println("\nGrades Added");
-			professorObject.addGrade();
-		displayProfessorMenu() ;
+			professorObject.addGradeService(professorId);
+			displayProfessorMenu(professorId) ;
 		break;
 		
 		
@@ -74,7 +76,7 @@ public class CRSProfessorMenu {
 		default: System.out.println("Wrong Choice Selected, press ENTER to redirect to Professor Menu.");
 		try{System.in.read();}
 		catch(Exception e) {}
-		displayProfessorMenu();
+		displayProfessorMenu(professorId);
 		}
 		
 //		scan.close();

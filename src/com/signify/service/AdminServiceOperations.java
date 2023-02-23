@@ -80,7 +80,7 @@ public class AdminServiceOperations implements AdminInterface {
 		AdminDAOImplementation viewAdminObj= new AdminDAOImplementation();
 		viewAdminObj.viewAdmins();
 	}
-	
+
 	public void assignCourse() {
 		System.out.println("Course assigned");
 	}

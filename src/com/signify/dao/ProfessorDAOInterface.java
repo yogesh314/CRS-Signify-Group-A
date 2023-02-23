@@ -13,4 +13,7 @@ import com.signify.bean.Professor;
  */
 public interface ProfessorDAOInterface {
 	public boolean addProfessorDAO(Professor professor) throws SQLException ;
+	public void viewEnrolledStudents(int professorId);
+	public void addGrade(int professorId, int studentId,String grade);
+	//public void addGrade();
 }

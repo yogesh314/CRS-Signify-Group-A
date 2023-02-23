@@ -14,6 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import com.signify.bean.Course;
+import com.signify.utils.DBUtils;
 
 /**
  * @author pratik
@@ -24,18 +25,19 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 	 * @param args
 	 */
 	
-	// Step 1
-		// JDBC driver name and database URL
+	private Connection conn;
 		   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
 		   static final String DB_URL = "jdbc:mysql://localhost/crs";
 
-		   //  Database credentials
 		   static final String USER = "root";
 		   static final String PASS = "root";
 		   
 		   public void approveStudent() {
+			   
+			  
+			    conn = DBUtils.getConnection();
 				Scanner sc = new Scanner(System.in);
-				Connection conn = null;
+				
 				PreparedStatement stmt = null;
 				PreparedStatement stmt_1 = null;
 				PreparedStatement stmt_2 = null;
@@ -111,7 +113,8 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 		   }
 		   
 		   public void addAdmin(String username, String password, int userId) {
-				Connection conn = null;
+			   
+			    Connection conn = null;
 				PreparedStatement stmt = null;
 				PreparedStatement stmt_id = null;
 				PreparedStatement stmt_admin = null;
@@ -172,7 +175,7 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 			}
 		   
 		   public void viewCourses() {
-				   Connection conn = null;
+			       Connection conn = null;
 				   PreparedStatement stmt = null;
 				   try{
 					   Class.forName("com.mysql.jdbc.Driver");
@@ -197,38 +200,34 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 					         
 					         System.out.printf("| %-8s | %-10s | %4s | %10s |%n", coursecode ,coursename, isOffered, instructor);
 
-//					         System.out.print("CourseCode: " + coursecode);
-//					         System.out.print(", CourseName: " + coursename);
-//					         System.out.print(", Offered: " + isOffered);
-//					         System.out.println(", Instructor: " + instructor);
 					      }
 					      System.out.printf("--------------------------------%n");
 					      stmt.close();
 					      conn.close();
 					   }catch(SQLException se){
-					      //Handle errors for JDBC
+					     
 					      se.printStackTrace();
 					   }catch(Exception e){
-					      //Handle errors for Class.forName
+					      
 					      e.printStackTrace();
 					   }finally{
-					      //finally block used to close resources
+					      
 					      try{
 					         if(stmt!=null)
 					            stmt.close();
 					      }catch(SQLException se2){
-					      }// nothing we can do
+					      }
 					      try{
 					         if(conn!=null)
 					            conn.close();
 					      }catch(SQLException se){
 					         se.printStackTrace();
-					  }//end finally try
-					}//end try
+					  }
+					}
 		}
 		   
 		   public void viewAdmins() {
-				Connection conn = null;
+			   conn = DBUtils.getConnection();
 				PreparedStatement stmt = null;
 				try{
 					   Class.forName("com.mysql.jdbc.Driver");
@@ -256,29 +255,29 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 					      stmt.close();
 					      conn.close();
 					   }catch(SQLException se){
-					      //Handle errors for JDBC
+					      
 					      se.printStackTrace();
 					   }catch(Exception e){
-					      //Handle errors for Class.forName
+					     
 					      e.printStackTrace();
 					   }finally{
-					      //finally block used to close resources
+					     
 					      try{
 					         if(stmt!=null)
 					            stmt.close();
 					      }catch(SQLException se2){
-					      }// nothing we can do
+					      }
 					      try{
 					         if(conn!=null)
 					            conn.close();
 					      }catch(SQLException se){
 					         se.printStackTrace();
-					  }//end finally try
+					  }
 				}
 		   }
 		   
 		   public void addProfessor() {
-			    Connection conn = null;
+			   Connection conn = null;
 			    PreparedStatement stmt_user = null;
 			    PreparedStatement stmt_professor = null;
 			   
@@ -302,6 +301,10 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 				Scanner scan4 = new Scanner(System.in);
 				String department = scan4.nextLine();
 				
+				System.out.print("Enter CourseCode: ");
+				Scanner scan5 = new Scanner(System.in);
+				String courseCode = scan4.nextLine();
+				
 			   
 			   try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
@@ -309,7 +312,7 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 					
 					String sql_user = "insert into user (userId, password ,username , roleId, isApproved) values(?,?,?,?,?)";
 					
-					String sql_professor = "insert into professor (professorName, professorId ,password , designation, department, DOJ) values(?,?,?,?,?,?)";
+					String sql_professor = "insert into professor (professorName, professorId ,password , designation, department, DOJ, courseCode) values(?,?,?,?,?,?,?)";
 					stmt_user = conn.prepareStatement(sql_user);
 					stmt_professor = conn.prepareStatement(sql_professor);
 
@@ -329,6 +332,7 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 					stmt_professor.setString(4, designation);
 					stmt_professor.setString(5, department);
 					stmt_professor.setDate(6,Date.valueOf(doj));
+					stmt_professor.setString(7, courseCode);
 					stmt_professor.executeUpdate();
 					stmt_professor.close();
 					
@@ -357,7 +361,7 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 		   }
 		   
 		   public void addCourse() {
-			    Connection conn = null;
+			   Connection conn = null;
 				PreparedStatement stmt = null;
 				
 				Scanner scan = new Scanner(System.in);
@@ -428,6 +432,7 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 		   
 		   public void dropCourses(String courseCode)
 		   {
+			   
 			   Connection conn = null;
 			   PreparedStatement stmt = null;
 			   
@@ -440,31 +445,68 @@ public class AdminDAOImplementation implements AdminDAOInterface {
 				      stmt.close();
 				      conn.close();
 				   }catch(SQLException se){
-				      //Handle errors for JDBC
+				      
 				      se.printStackTrace();
 				   }catch(Exception e){
-				      //Handle errors for Class.forName
+				     
 				      e.printStackTrace();
 				   }finally{
-				      //finally block used to close resources
+				     
 				      try{
 				         if(stmt!=null)
 				            stmt.close();
 				      }catch(SQLException se2){
-				      }// nothing we can do
+				      }
 				      try{
 				         if(conn!=null)
 				            conn.close();
 				      }catch(SQLException se){
 				         se.printStackTrace();
-				      }//end finally try
-				   }//end try
+				      }
+				   }
 				   System.out.println("Goodbye!");
 				}
 
 		   public String getCourseCode() {
-			// TODO Auto-generated method stub
+			
 			return null;
 		}
+		   public void assignProfessorToCourse(int professorId, String courseCode) {
+				Connection conn = null;
+				PreparedStatement stmt = null;
+				PreparedStatement stmt_course = null;
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					conn = DriverManager.getConnection(DB_URL, USER, PASS);
+					String sql = "update professor set courseCode=? where professor_id=" + professorId;
+					String sql_course = "update courses set instructor=? where courseCode=" + "\"" + courseCode + "\"";
+					stmt = conn.prepareStatement(sql);
+					stmt_course = conn.prepareStatement(sql_course);
 
+					stmt.setString(1, courseCode);
+					stmt.executeUpdate();
+					stmt.close();
+
+					stmt_course.setInt(1, professorId);
+					stmt_course.close();
+
+					conn.close();
+				} catch (SQLException se) {
+					se.printStackTrace();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					try {
+						if (stmt != null)
+							stmt.close();
+					} catch (SQLException se2) {
+					}
+					try {
+						if (conn != null)
+							conn.close();
+					} catch (SQLException se) {
+						se.printStackTrace();
+					}
+				}
+}
 }

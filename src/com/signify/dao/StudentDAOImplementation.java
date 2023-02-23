@@ -19,16 +19,11 @@ import com.signify.utils.DBUtils;
  */
 public class StudentDAOImplementation implements StudentDAOInterface {
 	
-//	JDBC driver name and database URL
 	 private Connection conn;
-//	public StudentDAOImplementation(Connection conn) {
-//        this.conn = conn;
-//    }
-	  
 	@Override
 	public boolean registerDAO(Student student) throws SQLException 
 	{
-	        conn = DBUtils.getConnection();
+		Connection conn = null;
 			String sql = "INSERT IGNORE INTO user (userId, password, userName, roleId) VALUES (?, ?, ?,?)";
 	        PreparedStatement stmt = conn.prepareStatement(sql);
 	        
