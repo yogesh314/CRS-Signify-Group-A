@@ -15,7 +15,7 @@ import com.signify.service.ProfessorServiceOperations;
 import com.signify.service.StudentServiceOperations;
 
 /**
- * @author hp
+ * @author HP
  *
  */
 public class CRSAdminMenu {
@@ -84,35 +84,39 @@ public class CRSAdminMenu {
 		case 2: 
 //			System.out.println("Add Admin");
 			adminObject.addAd();
+			System.out.println("New Admin Has been Added......");
 			displayAdminMenu();
 		break;
 		
 		case 3: 
 //			System.out.println("View Admins");
+			adminObject.viewAdmins();
 			//obj1 = adminObject.deleteCourse(obj);
 			displayAdminMenu();
 		break;
 		
 		case 4:
 //			System.out.println("Add Course");
-			adminObject.viewCourseDetails();
+			adminObject.addCourse();
 			displayAdminMenu();
 		break;
 		
 		case 5: 
-//			System.out.println("Remove Course");
-			//adminObject.addProfessor();
+			System.out.println("Enter Course code");
+			Scanner in = new Scanner(System.in);
+			String courseCode = in.nextLine();
+			adminObject.dropCourse(courseCode);
 			displayAdminMenu();
 		break;
 		
 		case 6:
-//			System.out.println("View Course");
-			adminObject.generateReportCard();
+			adminObject.viewCourseDetails();
+			displayAdminMenu();
 		break;
 		
 		case 7:
-//			System.out.println("Add Professor");
-			adminObject.generateReportCard();
+			adminObject.addProfessor();
+			displayAdminMenu();
 		break;
 		
 		case 8:

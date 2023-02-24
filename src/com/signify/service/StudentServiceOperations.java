@@ -5,6 +5,8 @@ package com.signify.service;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import com.signify.bean.Student;
@@ -104,23 +106,74 @@ public class StudentServiceOperations implements StudentInterface {
 		
 //		System.out.println("Success !! Student registered");
 	}
+	public void RegisterForSemester() {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter StudentId:  ");
+		int StudentId = scan.nextInt();
+		
+		System.out.print("Enter Current Semester: ");
+		int CurrSem = scan.nextInt();
+		
+		String doj = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		
+		try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS))
+		{
+//			Class.forName("com.mysql.jdbc.Driver");
+
+			StudentDAOInterface userDao = new StudentDAOImplementation(conn);
+			boolean bool = userDao.studentRegitration(StudentId,CurrSem,doj);
+			
+			if (bool) {
+				System.out.println("\nSuccess !! You are registered for Semester.....Redirecting to Main Menu\n");
+				
+            } else {
+            	System.out.println("Failed to register for semester");
+            }
+		}
+		
+		catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+			
+	}
 	
     public void viewGradeCard() {
     	System.out.println("Grade card can be viewed");
     }
     
-public void registerCourses() {
+    public void registerCourses() {
 		
 		System.out.println("course registered");
 	}
 	
 	public void addCourse() {
-			
-			System.out.println("courses added");
+		try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS))
+		{
+//			Class.forName("com.mysql.jdbc.Driver");
+
+			StudentDAOInterface userDao = new StudentDAOImplementation(conn);
+			userDao.addStudentCourse();
+			System.out.println("Student has been registered in course");
+		}
+		
+		catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+		
 		}
 	public void dropCourse() {
-			
-			System.out.println("courses dropped");
+		try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS))
+		{
+//			Class.forName("com.mysql.jdbc.Driver");
+
+			StudentDAOInterface userDao = new StudentDAOImplementation(conn);
+			userDao.dropStudentCourse();
+			System.out.println("Student has droped course");
+		}
+		
+		catch (SQLException ex) {
+            ex.printStackTrace();
+        }
 		}
 	public void payFees() {
 			

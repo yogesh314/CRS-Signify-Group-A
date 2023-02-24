@@ -13,6 +13,7 @@ public interface StudentInterface {
 	public void changePassword();
 	public StudentCollection register() ;
 	public void viewGradeCard() ;
+	public void RegisterForSemester();
     public void registerCourses() ;
 	public void addCourse() ;
 	public void dropCourse() ;

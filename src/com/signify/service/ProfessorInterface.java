@@ -8,7 +8,7 @@ package com.signify.service;
  *
  */
 public interface ProfessorInterface {
-	public void viewEnrollStudents() ;
-	public void addGrade() ;
+	public void viewEnrollStudents(int professorId) ;
+	public void addGrade(int professorId) ;
 	public void calculateCpi() ;
 }

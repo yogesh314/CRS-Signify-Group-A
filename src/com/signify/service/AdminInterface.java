@@ -16,4 +16,11 @@ public interface AdminInterface {
 	public void approveStudent();
 	public void viewCourseDetails();
 	public void generateReportCard();
+	
+
+	public void addCourse();
+	public void dropCourse(String courseCode);
+	public void viewAdmins();
+	public void addProfessor();
+
 }

@@ -31,8 +31,8 @@ public class CRSStudentMenu {
 		System.out.println("3. Drop Course");
 		System.out.println("4. View Grades");
 		System.out.println("5. Pay Fees");
-		System.out.println("6. Change Password");
-		System.out.println("7. Exit");
+		//System.out.println("6. Change Password");
+		System.out.println("6. Exit");
 		
 		
 		StudentInterface studentObject = new StudentServiceOperations();
@@ -45,31 +45,19 @@ public class CRSStudentMenu {
 		
 		int studentChoice=0;
 		
-		boolean flag;
 		
-		do
-		{
-			try {
-				System.out.print("Enter your Choice: ");
-				Scanner scan = new Scanner(System.in);
-//				System.out.println("Enter Integer Value only");
-				studentChoice = scan.nextInt();
-				flag=false;
-			}
-			catch(Exception e)
-			{
-				System.out.println("======================================================");
-				System.out.println("Please Select from above options only, try again");
-				System.out.println("======================================================");
-				flag = true;
-			}
-		}while(flag);
+		
+	//	boolean flag = true;
+		System.out.print("Enter your Choice: ");
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter Integer Value only");
+		studentChoice = scan.nextInt();
 		
 		switch(studentChoice) {
 		
 		case 1: 
 //		System.out.println("\nCourse Registered");
-		studentObject.registerCourses();
+		studentObject.RegisterForSemester();
 		displayStudentMenu(object);
 		break;
 	
@@ -97,13 +85,8 @@ public class CRSStudentMenu {
 		displayStudentMenu(object);
 		break;
 		
-		case 6: 
-//			System.out.println("\nPassword Change -->");
-		studentObject.changePassword();
-		displayStudentMenu(object);
-		break;
 		
-		case 7: System.out.println("\nRedirecting to Main Menu ");
+		case 6: System.out.println("\nRedirecting to Main Menu ");
 			CRSApplicationMenu exitobj= new CRSApplicationMenu();
 		exitobj.main(null);
 		break;

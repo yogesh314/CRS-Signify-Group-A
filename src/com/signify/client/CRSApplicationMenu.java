@@ -51,27 +51,30 @@ public class CRSApplicationMenu {
 //		Scanner scan = new Scanner(System.in);
 		int userChoice=0;
 		
-		boolean flag;
+	//	boolean flag = true;
+		System.out.print("Enter your Choice: ");
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter Integer Value only");
+		userChoice = scan.nextInt();
 		
-		do
-		{
-			try {
-				System.out.print("Enter your Choice: ");
-				Scanner scan = new Scanner(System.in);
-//				System.out.println("Enter Integer Value only");
-				userChoice = scan.nextInt();
-				flag=false;
-			}
-			catch(Exception e)
-			{
-				System.out.println("======================================================");
-				System.out.println("Please Select from above options only, try again");
-				System.out.println("======================================================");
-				flag = true;
-			}
-		}
+//		while(flag) {
+//			try {
+//				System.out.print("Enter your Choice: ");
+//				Scanner scan = new Scanner(System.in);
+////				System.out.println("Enter Integer Value only");
+//				userChoice = scan.nextInt();
+//				flag=false;
+//			}
+//			catch(Exception e)
+//			{
+//				System.out.println("======================================================");
+//				System.out.println("Please Select from above options only, try again");
+//				System.out.println("======================================================");
+//				flag = true;
+//			}
+//		}
+
 		
-		while(flag);
 		
 //		StudentServiceOperations StudentServiceObj = new StudentServiceOperations();
 ////		StudentCollection object = StudentServiceObj.register();
@@ -101,6 +104,7 @@ public class CRSApplicationMenu {
 		case 3: System.out.println("Password Update");
 		CRSUserMenu obj1 = new CRSUserMenu();
 		obj1.updatePasswordMenu();
+		main(null);
 		break;
 		
 		case 4: CRSApplicationMenu exitobj= new CRSApplicationMenu();
