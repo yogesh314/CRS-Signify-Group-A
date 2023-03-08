@@ -1,0 +1,71 @@
+
+  <div class="add-course-container">
+    <h2>Add Course</h2>
+    <form>
+      <div class="form-field">
+        <label for="studentid">Student ID:</label>
+        <input type="text" id="studentid" [(ngModel)]="model.studentid" name="semester" required>
+      </div>
+      <div class="form-field">
+        <label for="courseCode">Course Code:</label>
+        <input type="text" id="courseCode" [(ngModel)]="model.coursecode" name="courseCode" required>
+      </div>
+      <div class="form-field">
+        <label for="type">Type:</label>
+        <input type="text" id="type" [(ngModel)]="model.type" name="type" required>
+      </div>
+      <button type="submit" (click)="addCourse()">Add course</button>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <head>
+    <link rel="stylesheet" href="add-course.component.css">
+</head>
+<form ngform>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Register Today</h3>
+                        <p>Fill in the data below.</p>
+                        <form class="form-inline" novalidate>
+
+                            
+                                <input class="form-control" type="text" [(ngModel)]="model.studentid" name="studentid"
+                                    placeholder="Student Id" required>
+                            
+
+                            
+                                <input class="form-control" type="text" [(ngModel)]="model.coursecode" name="coursecode"
+                                    placeholder="CourseCode" required>
+                           
+
+                            
+                                <input class="form-control" type="text" [(ngModel)]="model.type" name="type"
+                                    placeholder="Type" required>
+                            
+                            <div class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" (click)="addCourse()">Submit</button>
+                            </div>
+                            
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+<!-- </form> -->

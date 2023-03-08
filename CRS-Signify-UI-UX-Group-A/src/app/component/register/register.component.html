@@ -1,0 +1,75 @@
+<head>
+    <link rel="stylesheet" href="register.component.css">
+</head>
+<form ngform>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Register Today</h3>
+                        <p>Fill in the data below.</p>
+                        <form class="form-inline" novalidate>
+
+                            
+                                <input class="form-control" type="text" [(ngModel)]="model.name" name="name"
+                                    placeholder="Full Name" required>
+                            
+
+                            
+                                <input class="form-control" type="text" [(ngModel)]="model.password" name="password"
+                                    placeholder="Password" required>
+                           
+
+                            
+                                <input class="form-control" type="text" [(ngModel)]="model.userId" name="userId"
+                                    placeholder="User Id" required>
+                            
+
+                            
+                                <input class="form-control" type="text" [(ngModel)]="model.studentid" name="studentid"
+                                    placeholder="studentId" required>
+                          
+
+                          
+                                <input class="form-control" type="text" [(ngModel)]="model.phnum" name="phnum"
+                                    placeholder="Phone Number" required>
+                           
+
+                            
+                                <input class="form-control" type="text" [(ngModel)]="model.fname" name="fname"
+                                    placeholder="Father Name" required>
+                            
+
+                                <input class="form-control" type="text" [(ngModel)]="model.address" name="address"
+                                    placeholder="Address" required>
+                            
+
+                                <input class="form-control" type="text" [(ngModel)]="model.doj" name="doj"
+                                    placeholder="Date Of Joining" required>
+                         
+
+                        
+                                <input class="form-control" type="text" [(ngModel)]="model.age" name="age"
+                                    placeholder="Age" required>
+                           
+                                <input class="form-control" type="text" [(ngModel)]="model.bloodgroup" name="bloodgroup"
+                                    placeholder="BloodGroup" required>
+                           
+                                <input class="form-control" type="text" [(ngModel)]="model.branch" name="branch"
+                                    placeholder="Branch" required>
+
+                            <div class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" (click)="registerUser()">Submit</button>
+                            </div>
+                            
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</form>
